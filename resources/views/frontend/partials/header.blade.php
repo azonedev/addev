@@ -89,7 +89,7 @@
 				</menu>
 				<div class="container">
 					<div class="search">
-						<form action="{{url('/search/result')}}" method="POST">
+						<form action="{{url('/search/result')}}" method="GET">
 							@csrf
 							<div class="row">
 								<div class="col-md-3 col-sm-3 location-s input-s">

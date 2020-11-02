@@ -23,7 +23,7 @@ Route::post('/contact-us/store','frontend\ContactUs@store');
 Route::get('/product/{tag}','frontend\Tag@index');
 
 // search
-Route::post('/search/result','frontend\Search@index');
+Route::get('/search/result','frontend\Search@index');
 
 // --------------
 // Admin

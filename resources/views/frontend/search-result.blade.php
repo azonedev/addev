@@ -13,7 +13,10 @@
 <div class="container result">
 	<div class="p-2"></div>
 	<div class="row">
-		@foreach ($searchData as $item)
+        
+        @foreach ($searchData as $item)
+        
+            
             <div class="col-md-6 p-2">
                 <div class="shadow-box border-y p-2">
                     <div class="row">
@@ -37,7 +40,8 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>  
+ 
         @endforeach
 		
 	</div>
