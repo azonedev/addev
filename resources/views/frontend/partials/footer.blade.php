@@ -20,10 +20,11 @@
 						<div class="row p-1">
 							<div class="col-md-4 col-sm-6">
 								<h3>Contact Us <hr width="20%"> </h3>
-								<div class="p-2"></div>
-								<h4>{{$footer_details}}</h4> 
-								<div class="p-2"></div>
-
+								@if (!empty($footer_details))
+									<div class="p-2"></div>
+									<h4>{{$footer_details}}</h4> 
+									<div class="p-2"></div>
+								@endif
 								<i class="fa fa-home"></i><a href="{{$location_link}}" class="a-white" data-lity> {{$location}}</a>
 								<br>
 								<i class="fa fa-phone"></i><a href="tel:{{$phone}}" class="a-white"> {{$phone}}</a>
