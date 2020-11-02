@@ -41,8 +41,7 @@
 												<div class="abs">
 													<small class="secondary-btn">{{$item->category}}</small>
 													<div class="p-2"></div>
-													<a href="{{url('/')}}/{{$item->id}}/{{$item->ad_title}}
-"><h4>{{$item->ad_title}}</h4></a>
+													<a href="{{url('/')}}/{{$item->id}}/{{$item->ad_title}}"><h4>{{$item->ad_title}}</h4></a>
 													<h5>{{$item->price}} $</h5>
 												</div>
 										</div>
@@ -60,7 +59,7 @@
 										<div class="col-md-4">
 											<div class="white-bg rel rel-hover">
 												<a href="#">
-													<img class="br-10 shadow-box" src='{{asset("$item->image")}}' width="100%" alt="">
+													<img class="br-10 shadow-box" src='{{asset("$item->image")}}' width="100%" height="180px" alt="">
 													<div class="abs">
 														<small class="secondary-btn">{{$item->category}}</small>
 													</div>
