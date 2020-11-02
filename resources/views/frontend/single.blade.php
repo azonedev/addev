@@ -1,10 +1,25 @@
 @extends('frontend.home-master')
 @section('title','adDev')
-@section('main')
-    		<!-- single -->
+@section('meta')
     @foreach ($ad as $item)
-        
-		<div class="container">
+    <meta property="og:url"           content="{{Request::url()}}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{$item->ad_title}}" />
+    <meta property="og:description"   content="{{$item->ad_title}}" />
+    <meta property="og:image"         content="{{url('/')}}/{{$item->image}}" />
+    @endforeach
+@endsection
+@section('main')
+
+
+
+
+    @foreach ($ad as $item)
+    
+
+
+    <div id="printAd">
+		<div class="container" >
 			<div class="p-4"></div>
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
@@ -118,6 +133,33 @@
 					    @endfor
 
 					</p>
+
+  
+                    
+					{{-- print --}}
+					<p>Print This ad : 
+					<button class="btn btn-large btn-dark" onclick="printDiv('printAd')"><i class="fa fa-print"></i> Print </button></p>
+						<script>
+						function printDiv(divName) {
+						     var printContents = document.getElementById(divName).innerHTML;
+						     var originalContents = document.body.innerHTML;
+
+						     document.body.innerHTML = printContents;
+
+						     window.print();
+
+						     document.body.innerHTML = originalContents;
+						}
+						</script>
+
+					{{-- end print --}}
+					
+					
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <h2>Share On : <div class="addthis_inline_share_toolbox"></div></h2>
+
+            
+					
 				</div>
 			</div>
 		</div>
@@ -129,9 +171,13 @@
 				{!!$item->product_details!!}
 			</div>
 		</div>
-        <!-- /single -->
+		<!-- /single -->
+		</div>
     @endforeach
-    
+	
+
+            
+
 @endsection
 
 @section('extra-js')
@@ -174,4 +220,9 @@
 
 		});
 	</script>
+
+	
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f9fa506c0b016e7"></script>
+
 @endsection

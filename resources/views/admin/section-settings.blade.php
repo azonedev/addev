@@ -30,7 +30,11 @@
                                 <select name="section_1" id="" class="form-control">
                                     <option value="{{$section_1}}">{{$section_1}}</option>
                                     @foreach ($category as $item)
-                                    <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                        @if ($item->cat_name==$section_1)
+                                            @continue
+                                        @else
+                                            <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -43,8 +47,12 @@
                                <div class="form-group">
                                 <select name="section_2" id="" class="form-control">
                                     <option value="{{$section_2}}">{{$section_2}}</option>
-                                    @foreach ($category as $item)
-                                    <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                     @foreach ($category as $item)
+                                        @if ($item->cat_name==$section_2)
+                                            @continue
+                                        @else
+                                            <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -58,7 +66,11 @@
                                 <select name="section_3" id="" class="form-control">
                                     <option value="{{$section_3}}">{{$section_3}}</option>
                                     @foreach ($category as $item)
-                                    <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                        @if ($item->cat_name==$section_3)
+                                            @continue
+                                        @else
+                                            <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -71,8 +83,12 @@
                                <div class="form-group">
                                 <select name="section_4" id="" class="form-control">
                                     <option value="{{$section_4}}">{{$section_4}}</option>
-                                    @foreach ($category as $item)
-                                    <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                     @foreach ($category as $item)
+                                        @if ($item->cat_name==$section_4)
+                                            @continue
+                                        @else
+                                            <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                        @endif
                                     @endforeach
 
                                 </select>
@@ -86,8 +102,12 @@
                                <div class="form-group">
                                 <select name="section_5" id="" class="form-control">
                                     <option value="{{$section_5}}">{{$section_5}}</option>
-                                    @foreach ($category as $item)
-                                    <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                     @foreach ($category as $item)
+                                        @if ($item->cat_name==$section_5)
+                                            @continue
+                                        @else
+                                            <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -101,9 +121,13 @@
                                <div class="form-group">
                                 <select name="section_6" id="" class="form-control">
                                     <option value="{{$section_6}}">{{$section_6}}</option>
-                                        @foreach ($category as $item)
+                                         @foreach ($category as $item)
+                                        @if ($item->cat_name==$section_6)
+                                            @continue
+                                        @else
                                             <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
-                                        @endforeach
+                                        @endif
+                                    @endforeach
                                 </select>
                             </div>
                             </td>

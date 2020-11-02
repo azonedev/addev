@@ -60,9 +60,13 @@
                                 <div class="form-group col-6">
                                     <label for="select">Select Category</label>
                                     <select name="category" class="form-control" id="select">
-                                        <option value=" ">Choose</option>
+                                        <option value="{{$edit->category}}">{{$edit->category}}</option>
                                         @foreach ($category as $item)
-                                            <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                            @if($item->cat_name == $edit->category)
+                                                @continue
+                                            @else
+                                                <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
+                                            @endif
                                         @endforeach
                                         <option value="ohters">others</option>
 

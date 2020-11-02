@@ -10,6 +10,7 @@
 	@endforeach
 	
 	@yield('header-extra-link')
+	@yield('meta')
 
 	@include('frontend.partials.header-links')
 </head>
