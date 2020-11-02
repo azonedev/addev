@@ -4,13 +4,23 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use DB;
 class Admin extends Controller
 {
    
     public function index()
     {
-        return view('admin.admin');
+        $newMessage = count(DB::table('messages')->where('status','unread')->get());
+        $paid_ad = count(DB::table('ad_posts')->where('status','paid')->get());
+        $all_ad = count(DB::table('ad_posts')->get());
+        $deactive_ad = count(DB::table('users')->where('role','user')->get());
+
+        return view('admin.admin',[
+            'message' =>$newMessage,
+            'paid' =>$paid_ad,
+            'all_ad'=>$all_ad,
+            'deactive_ad'=>$deactive_ad
+        ]);
     }
 
     /**
