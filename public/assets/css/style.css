@@ -1,0 +1,539 @@
+/*
+	
+
+
+
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+/*--------------
+	common css
+--------------*/
+
+
+.light-bg{
+	background: var(--light);
+	font-family: 'Roboto', sans-serif;
+}
+.white-bg{
+	background:var(--white);
+}
+.primary{
+	color:var(--light-green) !important;
+}
+
+.shadow-box{
+	box-shadow:var(--box-shadow);
+	border-radius: 5px;
+}
+.br-10{
+	border-radius: 10px;
+}
+.title{
+	/*font-weight: bold;*/
+}
+.bb-70{
+	padding: 5px;
+	border-bottom: 5px solid var(--light-green);
+	width: 70px;
+}
+h1,h2,h3,h4{
+	color:var(--black);
+}
+/*h5 is only for show price */
+h5{
+	color: var(--light-green);
+	font-weight: bold;
+}
+
+.sub-title {
+    font-family: roboto;
+    font-weight: 600;
+    padding: 10px;
+    border-left: 8px solid var(--light-yellow);
+}
+.primary-btn{
+	background: var(--light-yellow);
+	color:var(--white);
+	padding:5px 10px;
+	border-radius: 4px;
+
+}.secondary-btn{
+	background: var(--light-green);
+	color:var(--white);
+	padding:5px 10px;
+	border-radius: 4px;
+
+}
+
+/*----------------
+	Header top
+-----------------*/
+.menu-gap{
+	height: 130px;
+}
+.header-top{
+	padding-top: 15px;
+}
+.header-top a {
+    color: #000;
+    padding:0px 5px;
+}
+
+.header-top a:hover{
+	text-decoration: none;
+	color: var(--light-yellow);
+}
+
+.header-top i{
+	color:var(--light-green);
+}
+header hr{
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+header .search{
+	padding: 10px;
+	/*background:var(--light-green);*/
+	border-radius: 8px;
+	margin-bottom: 15px;
+}
+
+
+
+.ad-btn {
+	border: 1px solid #FDB001;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 15px;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	padding: 9px 30px;
+	text-decoration: none;
+	display: inline-block;
+	color: #FFFFFF;
+	background-image: linear-gradient(to bottom, #FDB001, #E7940C);
+	-webkit-transition: all 1s ease-out;
+	-moz-transition: all 1s ease-out;
+	-ms-transition: all 1s ease-out;
+	-o-transition: all 1s ease-out;
+	transition: all 1s ease-out;
+}
+.ad-btn:hover {
+	outline: none;
+	color: #FFFFFF;
+	border: 1px solid #E7940C;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#E7940C), to(#FDB001));
+	background-image: -webkit-linear-gradient(top, #E7940C, #FDB001);
+	background-image: -moz-linear-gradient(top, #E7940C, #FDB001);
+	background-image: -ms-linear-gradient(top, #E7940C, #FDB001);
+	background-image: -o-linear-gradient(top, #E7940C, #FDB001);
+	background-image: linear-gradient(to bottom, #E7940C, #FDB001);
+}
+.navbar.navbar-expand-lg.navbar-light {
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+}
+
+
+
+
+
+/*----------
+	menu
+----------*/
+
+.menu-bg {
+    background: var(--light-green);
+    /* color: var(--white) !important; */
+}
+li.nav-item.active a {
+    color: #fff !important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: var(--white);
+    font-weight: 600;
+    transition: 0.2s;
+}
+a.nav-link:hover {
+    color: var(--light-yellow) !important;
+}
+
+li.nav-item.join-us {
+    margin-left: 45px;
+}
+li.nav-item.join-us img {
+    width: 120px;
+}
+li.nav-item.join-us a i{
+	color: white;
+}
+/*--------
+	fb join button
+--------*/
+p.fb-join {
+    margin-bottom: 0px;
+    background: #f0f8ff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.fb-join i.fa.fa-facebook {
+    font-size: 20px;
+    color: #00f;
+    padding-right: 3px;
+}
+
+/*-----------
+	search bar
+-----------*/
+
+.location-s{
+	padding-left: 20px;
+}
+.input-s .form-control {
+	margin: 10px 0;
+	border: transparent;
+	border-radius: 4px;
+	border: 1px solid #000 !important;
+}
+
+.search-s .form-control {
+	max-width:120px;
+	color: white;
+	background: #262525cf;
+	font-weight: bold;
+}
+.sticky{
+	position: sticky;
+	top: 0;
+}
+
+
+/*-------------
+	slider & feature
+-------------*/
+
+/*.col .slider-category{
+	max-width: 250px;
+}*/
+
+.feature{
+	margin-top: -30px;
+}
+
+.slider-category {
+    max-width: 290px;
+}
+
+.slider-category h3 {
+	background: var(--white);
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.slider-category li {
+	list-style: none;
+	padding:13px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.slider-category li:hover{
+	
+	background: var(--light-green);
+}
+.slider-category li i{
+	color: var(--light-green);
+	font-size: 25px;
+}
+.slider-category li:hover i{
+	color: #ddd;
+}
+
+.slider-category li a{
+	color: var(--black);
+	padding-left: 10px;
+	margin-top: -3px; 
+}
+.slider-category li:hover a{
+	color:var(--white);
+	text-decoration: none;
+}
+.slider-category li span{
+	float:right;
+	
+}
+.slider-category li:hover span{
+	color:var(--white);
+}
+.slider-category hr{
+	margin:0;
+}
+
+/*-------------
+
+	slider feature
+--------------*/
+button.owl-dot.active span {
+    background: var(--light-yellow) !important;
+}
+.abs.abs-hover {
+    background: var(--light-green);
+    color: #fff;
+    width: 100%;
+    bottom: 0px;
+    padding: 2px;
+    transition: 0.5s;
+}
+.rel-hover:hover .abs-hover{
+	padding: 8px;
+}
+.rel-hover:hover .abs-hover-text{
+	display: block;
+}
+
+.abs.abs-hover p{
+	color:var(--white);
+}
+.abs-hover-text{
+	text-align: center;
+	display: none;
+}
+
+/*-----------
+	house sale
+
+-----------*/
+.house-r{
+	margin-top: -30px;
+}
+.rel{
+	position: relative;
+}
+.abs{
+	width: 90%;
+    padding: 10px;
+    position: absolute;
+    bottom: 5px;
+    transition: 0.2s;
+}
+.abs a h4{
+	color:var(--white);
+}
+.abs h5{
+	color:var(--white);
+}
+.bg-pro{
+	width: 100%;
+	height: 300px;
+	background: cover;
+	background-position: center right;
+	transition: 0.5s;
+	border-radius: 4px;
+}
+.bg-pro:hover{
+	background-position: left center;
+}
+.bg-pro:hover .abs{
+	bottom: 25px;
+}
+.abs-full{
+	width: 100%;
+	height: 300px;
+	background-color:#260c0770;
+}
+
+/*-----------
+	category
+------------*/
+.cat i {
+    /* padding: 8px; */
+    font-size: 20px;
+    padding-right: 10px;
+    color: var(--light-green);
+}
+/*---------
+
+	footer
+
+--------*/
+footer{
+	color:var(--white);
+}
+footer .middle {
+    background-color: #222222;
+    color: var(--white);
+}
+footer .middle a{
+	color: var(--white);
+}
+footer h2,h3{
+	color:var(--light-green);
+}
+footer h4{
+	color:var(--white);
+}
+footer small{
+	color:var(--black);
+}
+.footer-top-icon {
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    padding: 5px;
+    border-radius: 3px;
+}
+.footer-top-icons small {
+    color: var(--white);
+    font-size: 17px;
+    padding-left: 5px;
+}
+.fa-facebook{
+	color:#516EAB;
+}
+.fa-twitter{
+	color:#1DA1F2;
+}
+.fa-youtube-play{
+	color:#F80303;
+}
+footer .bottom{
+	background-color: #000000;
+}
+
+
+
+/*---------
+
+	contact us
+--------*/
+
+#contact-us{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.contact-btn{
+	color: var(--white);
+	background: var(--light-green);
+	transition: 0.2s;
+}
+.contact-btn:hover{
+	color:var(--white);
+	background: var(--black);
+}
+
+
+
+/*--------
+	login and reg
+--------*/
+
+.login-form {
+    width: 340px;
+    margin: 50px auto;
+  	font-size: 15px;
+}
+.login-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/*-----------
+	about us
+------------*/
+.text-cont {
+    font-size: 23px;
+    font-family: arial;
+    text-align: left
+}
+
+/*--------
+	terms
+---------*/
+
+
+#terms{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.terms-cont{
+	text-align:left;
+}
+
+
+
+
+/*----------
+	single page
+---------*/
+.tag{
+	padding:5px;
+}
+
+
+
+/*-------
+	ad-post
+--------*/
+
+.ad-post{
+	border:3px solid var(--light-green);
+	font-family: roboto;
+}
+
+
+
+
+/*---------------
+	media query
+-------------*/
+/*slider home page first section*/
+@media screen and (min-width: 800px){
+	.owl-bg{
+		width: 230px;
+	}
+}
+@media screen and (min-width: 768px){
+	.owl-bg{
+		width: 200px;
+	}
+}
+
+@media screen and (min-width: 1000px){
+	.owl-bg{
+		width: 260px;
+		
+	}
+}
+@media screen and (min-width: 1200px){
+	.owl-bg{
+		width: 250px;
+	}
+}
