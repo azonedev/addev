@@ -7,15 +7,27 @@
     <form action="{{url('admin/setting/update/')}}/{{$item->id}}" method="post" enctype="multipart/form-data">
     @csrf
            
-            <div class="form-group">
-                <label for="name">Favicon </label>
-                <input name="favicon" type="file" id="cateogry-image" class="form-control">
-                <input type="hidden" name="prev_favicon" value="{{$item->favicon}}">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="name">Favicon </label>
+                        <input name="favicon" type="file" id="cateogry-image" class="form-control">
+                        <input type="hidden" name="prev_favicon" value="{{$item->favicon}}">
+                    </div>
+                </div>
+                <div class="col-6"><img src='{{asset("$item->favicon")}}' height="70px"  alt=""></div>
             </div>
             <div class="form-group">
                 <label for="name">Logo </label>
                 <input name="logo" type="file" id="cateogry-image" class="form-control">
                 <input type="hidden" name="prev_logo" value="{{$item->logo}}">
+                <img src='{{asset("$item->logo")}}' height="70px"  alt="">
+            </div>
+            <div class="form-group">
+                <label for="name">Extra Ad </label>
+                <input name="extra_ad" type="file" id="cateogry-image" class="form-control">
+                <input type="hidden" name="prev_extra_ad" value="{{$item->note}}">
+                <img src='{{asset("$item->note")}}' height="70px"  alt="">
 
             </div>
             <div class="form-group">

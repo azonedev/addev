@@ -30,24 +30,41 @@ class Setting extends Controller
     {
         $favicon_file = $r->file('favicon');
         $logo_file = $r->file('logo');
+        $extra_ad_file = $r->file('extra_ad');
 
-        if( ($favicon_file && $logo_file) == NULL){
+        if( $favicon_file  == NULL){
             $favicon = $r->input('prev_favicon');
-            $logo = $r->input('prev_logo');
+            
         }else{
 
             //  favicon
-            $image_name = time() . '.' . $favicon_file->getClientOriginalExtension();
-            $destinationPath = public_path('assets/admin/img/');
+            $image_name = time() . '2.' . $favicon_file->getClientOriginalExtension();
+            $destinationPath = public_path('/assets/admin/img/');
             $favicon_file->move($destinationPath, $image_name);
             $favicon = 'assets/admin/img/' . $image_name;
 
+
+        }
+        
+        if( $logo_file == NULL){
+            $logo = $r->input('prev_logo');
+        }else{
+            
             // logo
             $image_name = time() . '.' . $logo_file->getClientOriginalExtension();
-            $destinationPath = public_path('assets/admin/img/');
+            $destinationPath = public_path('/assets/admin/img/');
             $logo_file->move($destinationPath, $image_name);
             $logo = 'assets/admin/img/' . $image_name;
-
+        }
+        if( $extra_ad_file == NULL){
+            $extra_ad = $r->input('prev_extra_ad');
+        }else{
+            
+            // logo
+            $image_name = time() . '.' . $extra_ad_file->getClientOriginalExtension();
+            $destinationPath = public_path('/assets/admin/img/');
+            $extra_ad_file->move($destinationPath, $image_name);
+            $extra_ad = 'assets/admin/img/' . $image_name;
         }
 
         $footer_details = $r->input('footer_details');
@@ -64,6 +81,7 @@ class Setting extends Controller
             set 
                 favicon = ?,
                 logo = ?,
+                note =?,
                 footer_details=?,
                 location = ?,
                 location_link = ?,
@@ -78,6 +96,7 @@ class Setting extends Controller
             [
                 $favicon,
                 $logo,
+                $extra_ad,
                 $footer_details,
                 $location,
                 $location_link,
