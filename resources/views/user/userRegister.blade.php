@@ -47,7 +47,8 @@
 	        </div>
 	        <div class="form-group">
 	            <input name="password" type="password" class="form-control" placeholder="Password" required="required">
-	        </div>
+			</div>
+			<input type="hidden" value="{{$re_url}}" name="url">
 	        <div class="form-group">
 	            <button type="submit" class="btn contact-btn btn-block">Register</button>
 	        </div>

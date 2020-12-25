@@ -23,7 +23,7 @@
                                                     <th>Address</th>
                                                     <th>Category</th>
                                                     <th>Valid</th>
-                                                    <th>Type</th>
+                                                    <th>Set as</th>
                                                     <th></th>
                                                     <th></th>
                                                 </tr>
@@ -56,11 +56,10 @@
                                                                @endphp
                                                             </td>
                                                             <td>
-                                                                @if ($item->status=="paid")
-                                                                   <button class='btn btn-info btn-small'>Paid</button>
-                                                                @else
-                                                                    <button class='btn btn-warning btn-small'>Unpaid</button>
-                                                                @endif
+                                                                <form action="{{url('admin/unpaid-ads')}}/{{$item->id}}" method="POST">
+                                                                    @csrf
+                                                                    <button type="submit" class="btn btn-warning">Unpaid</button>
+                                                                </form>
                                                             </td>
                                                         
                                                             

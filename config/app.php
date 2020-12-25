@@ -178,7 +178,7 @@ return [
         /*
          * maatwebsite/excel to export and import data
          */
-        Maatwebsite\Excel\ExcelServiceProvider::class,
+         Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -235,7 +235,7 @@ return [
         /*
          * maatwebsite/excel to export and import data
          */
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
 
 

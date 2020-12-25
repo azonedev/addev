@@ -25,7 +25,7 @@
 				<div class="col-md-6 col-sm-6">
 					<div class="owl-carousel owl-theme">
                          
-                        <img src='{{asset("$item->image")}}'  width="100%" alt="">
+                        <img class="image-gallery" src='{{asset("$item->image")}}'  width="100%" alt="">
                         @if ($item->image_gallery !=NULL)
                             @php
 								 $images = (json_decode($item->image_gallery, true));
@@ -37,7 +37,7 @@
                                     $image_count = count($images);
                                 @endphp
                                 @for ($i = 0; $i < $image_count; $i++)
-                                    <img src='{{asset("$images[$i]")}}'  width="100%" alt="">
+                                    <img class="image-gallery" src='{{asset("$images[$i]")}}'  width="100%" alt="">
                                 @endfor
                             {{-- @endforeach --}}
                         @endif
@@ -48,7 +48,6 @@
 					<h3>{{$item->ad_title}}</h3>
                     <h4>Price : <span class="primary">{{$item->price}}</span> $</h4>
                     <small style="color:red">{{$item->price_negotiable}} - {{$item->no_price}}</small>
-					<p><i class="fa fa-map-marker primary"></i> {{$item->location}}</p>
 					<p><i class="fa fa-clock-o"></i> {{$item->created_date}} </p>
                     <div class="p-2"></div>
                     
@@ -63,13 +62,10 @@
 						</h4> --}}
 						
 						<!-- Button trigger modal -->
-						<h4>Do you want to contact? 
-							<br>
-							Please 
+						<h4>
 							<button type="button" class="btn primary-btn" data-toggle="modal" data-target="#exampleModal">
-								login
+								View Contact
 							</button>
-							first !
 						</h4> 	
 						<!-- Modal -->
 						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -108,7 +104,7 @@
 												<a href="#" class="float-right">Forgot Password?</a> -->
 											</div>        
 										</form>
-										<p class="text-center"><a href="{{url('/register')}}">Create an Account</a></p>
+										<p class="text-center"><a href="{{url('/register')}}/{{$item->id}}">Create an Account</a></p>
 							</div>
 							
 							</div>
@@ -156,7 +152,10 @@
 					
 					
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <h2>Share On : <div class="addthis_inline_share_toolbox"></div></h2>
+                <h3 class="float-left p-2">Share On : </h3>
+					<div class="d-inline float-left">
+						<div class="addthis_inline_share_toolbox"></div>
+					</div>
 
             
 					
@@ -222,7 +221,8 @@
 	</script>
 
 	
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f9d0f720fdb1a7c"></script>
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f9fa506c0b016e7"></script>
 
 @endsection

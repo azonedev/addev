@@ -82,33 +82,34 @@ class MyAccount extends Controller
     }
 
     function updateAccount(Request $r,$id){
+        $post_up = [];
+        $post_up['ad_title'] = $r->input('ad_title');
+        $post_up['price'] = $r->input('price');
+        $post_up['price_negotiable'] = $r->input('price_negotiable');
+        $post_up['no_price'] = $r->input('no_price');
+        $post_up['contact'] = $r->input('contact');
+        $post_up['address'] = $r->input('address');
 
-        $ad_title = $r->input('ad_title');
-        $price = $r->input('price');
-        $price_negotiable = $r->input('price_negotiable');
-        $no_price = $r->input('no_price');
-        $contact = $r->input('contact');
-        $address = $r->input('address');
+        $post_up['location'] = $r->input('location');
 
-        $location = $r->input('location');
+        $post_up['category'] = $r->input('category');
 
-        $category = $r->input('category');
         $prev_img = $r->input('prev_img');
         $feature_image_file = $r->file('feature_image');
         if($feature_image_file==Null){
-            $feature_image = $prev_img;
+            $post_up['image'] = $prev_img;
         }else{
             // feature_image
             $image_name = time() . '.' . $feature_image_file->getClientOriginalExtension();
             $destinationPath = public_path('assets/admin/img/ad');
             $feature_image_file->move($destinationPath, $image_name);
-            $feature_image = 'assets/admin/img/ad/' . $image_name;
+            $post_up['image'] = 'assets/admin/img/ad/' . $image_name;
         }
 
         
-        $product_details = $r->input('product_details');
-        if($product_details==NULL){
-            $product_details = "There is no product details";
+        $post_up['product_details'] = $r->input('product_details');
+        if($post_up['product_details']==NULL){
+            $post_up['product_details'] = "There is no product details";
         }
 
         $ad_validity = $r->input('validity');
@@ -119,44 +120,12 @@ class MyAccount extends Controller
         date_default_timezone_set("America/New_York");
         $date = new DateTime();
         $date->setTimezone(new DateTimeZone('America/Detroit'));
-        $ad_start = $date->format('Y-m-d H:i:s');
-        $ad_end = date('Y-m-d H:i:s', strtotime("+$ad_validity days") );
-
+        $post_up['ad_start'] = $date->format('Y-m-d H:i:s');
+        $post_up['ad_end'] = date('Y-m-d H:i:s', strtotime("+$ad_validity days") );
+        $post_up['ad_validity'] = $ad_validity;
         // ad insert into database
-        DB::UPDATE("
-            UPDATE ad_posts
-            SET
-                ad_title = ?,
-                price = ?,
-                price_negotiable = ?,
-                no_price = ?,
-                contact = ?,
-                address = ?,
-                location = ?,
-                category = ?,
-                image = ?,
-                product_details = ?,
-                ad_validity = ?,
-                ad_start = ?,
-                ad_end = ?
-            WHERE 
-                id = ?
-        ",[
-            $ad_title,
-            $price,
-            $price_negotiable,
-            $no_price,
-            $contact,
-            $address,
-            $location,
-            $category,
-            $feature_image,
-            $product_details,
-            $ad_validity,
-            $ad_start,
-            $ad_end,
-            $id
-        ]);
+        DB::table('ad_posts')->where('id',$id)->update($post_up);
+
 
         $r->session()->flash('msg', 'Ad posts updated successfully !');
         return redirect('/user/account');

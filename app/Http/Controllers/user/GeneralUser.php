@@ -10,9 +10,10 @@ use DB;
 class GeneralUser extends Controller
 {
 
-    public function index()
+    public function index($url='0')
     {
-        return view("user.userRegister");
+
+        return view("user.userRegister",['re_url'=>$url]);
     }
 
     public function store(Request $r)
@@ -21,6 +22,7 @@ class GeneralUser extends Controller
         $email = $r->email;
         $mobile_no = $r->mobile_no;
         $password = $r->password;
+        $url = $r->url;
 
         DB::INSERT("INSERT INTO users (
                 name,
@@ -36,8 +38,14 @@ class GeneralUser extends Controller
                 $password
             ]
         );
-
-        return "Register successfully";
+        
+        Session::flash('msg','Register successfully ! Please login');
+        
+        if($url!=0){
+            return redirect("/login/$url");
+        }else{
+            return redirect('/login');
+        }
     }
 
 

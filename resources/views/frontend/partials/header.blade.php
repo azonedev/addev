@@ -92,13 +92,13 @@
 						<form action="{{url('/search/result')}}" method="GET">
 							@csrf
 							<div class="row">
-								<div class="col-md-3 col-sm-3 location-s input-s">
+								<div class="pl-md-1 col-md-3 col-sm-3 location-s input-s">
 									
 						 			<input name="location" type="text" placeholder=" Location" class="form-control">
 								</div>
-								<div class="col-md-3 col-sm-3 category-s input-s">
+								<div class="pl-md-3 col-md-3 col-sm-3 category-s input-s">
 									<select name="category" class="form-control" id="">
-									  	<option value="0" selected>Choose</option>
+									  	<option value="0" selected>Category</option>
 									  	@foreach ($category as $item)
 											  <option value="{{$item->cat_name}}">{{$item->cat_name}}</option>
 										  @endforeach
@@ -107,11 +107,11 @@
 
 									 </select>
 								</div>
-								<div class="col-md-3 col-sm-3 keyword-s input-s">
+								<div class="pl-md-3 col-md-4 col-sm-3 keyword-s input-s">
 									<input name="keyword" type="text" placeholder="Keyword" class="form-control">
 								</div>
-								<div class="col-md-3 col-sm-3 search-s input-s">
-						   			<input type="submit" class="form-control" value="Search">
+								<div class="p-md-0 col-md-2 col-sm-3 search-s input-s">
+						   			<input type="submit" class="form-control float-md-right float-sm-none" value="Search">
 						   				
 								</div>
 							</div>

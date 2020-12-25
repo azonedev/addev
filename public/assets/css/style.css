@@ -336,6 +336,7 @@ button.owl-dot.active span {
 .bg-pro{
 	width: 100%;
 	height: 300px;
+	max-height: 300px;
 	background: cover;
 	background-position: center right;
 	transition: 0.5s;
@@ -352,7 +353,24 @@ button.owl-dot.active span {
 	height: 300px;
 	background-color:#260c0770;
 }
+/*v-2 extra css*/
+img.shadow-box {
+	max-height: 170px;
+	height: 170px;
+}
 
+.recent-ad-img {
+	height: 76px;
+}
+
+.box-img {
+	height: 170px;
+}
+.image-gallery {
+	max-height: 275px;
+}
+
+/*end of v-2 extra css*/
 /*-----------
 	category
 ------------*/
@@ -507,7 +525,7 @@ footer .bottom{
 	border:3px solid var(--light-green);
 	font-family: roboto;
 }
-
+ 
 
 
 
@@ -522,18 +540,20 @@ footer .bottom{
 }
 @media screen and (min-width: 768px){
 	.owl-bg{
-		width: 200px;
+		width: 260px;
 	}
 }
 
 @media screen and (min-width: 1000px){
 	.owl-bg{
 		width: 260px;
+		align-items:center;
+		text-align: center;
 		
 	}
 }
 @media screen and (min-width: 1200px){
 	.owl-bg{
-		width: 250px;
+		width: 470%;
 	}
 }

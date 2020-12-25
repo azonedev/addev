@@ -34,7 +34,9 @@
 							
 							<div class="row">
 								<div class="col-6">
-									<a href="{{url('/')}}/{{$item->id}}/{{$item->ad_title}}"><img src='{{asset("$item->image")}}'width="100%" alt=""></a>
+									<a href="{{url('/')}}/{{$item->id}}/{{$item->ad_title}}">
+										<img class="recent-ad-img" src='{{asset("$item->image")}}'width="100%" alt="">
+									</a>
 								</div>
 								<div class="col-6">
 									

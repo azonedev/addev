@@ -17,6 +17,10 @@ class AdShow extends Controller
         $allAds = DB::select('select * from ad_posts');
         return view('admin.ads.add-to-paid',['allAds'=>$allAds]);
     }
+    function addToUnpaid($id) {
+        DB::table('ad_posts')->where('id',$id)->update(['status'=>'unpaid']);
+        return redirect()->back()->with('msg','added to unpaid successfully!');
+    }
     function update(Request $r,$id){
         $ad_validity = $r->input('add-to-paid');
         $status = 'paid';

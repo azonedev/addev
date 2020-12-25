@@ -44,6 +44,7 @@ Route::group(['prefix'=>'admin', 'middleware' =>'role'],function (){
     Route::get('/add-to-paid','admin\AdShow@AddToPaid');
     Route::post('/add-to-paid/update/{id}','admin\AdShow@update');
     Route::get('/paid-ads','admin\AdShow@paidAds');
+    Route::post('/unpaid-ads/{id}','admin\AdShow@addToUnpaid');
     Route::get('/active-ads','admin\AdShow@active');
     Route::get('/deactivated-ads','admin\AdShow@deactivated');
     Route::get('/all-ads','admin\AdShow@index');
@@ -83,10 +84,10 @@ Route::group(['prefix'=>'admin', 'middleware' =>'role'],function (){
     Route::get('/setting',"admin\Setting@index");
     Route::post('/setting/update/{id}',"admin\Setting@update");
 
-    Route::get('/export-data',"admin\ExportExcelController@index");
+    
 
     // export user data
-    Route::get('/export-data/user',"admin\ExportExcelController@userExport");
+    // Route::get('/dbexport','ExportExcelController@excel');
 });
 
 // --------------
@@ -95,8 +96,8 @@ Route::group(['prefix'=>'admin', 'middleware' =>'role'],function (){
 
 // user login & reg
 
-Route::get('/register',"user\GeneralUser@index");
-Route::post('/register/save',"user\GeneralUser@store");
+Route::get('/register/{url?}',"user\GeneralUser@index");
+Route::post('/register/save/',"user\GeneralUser@store");
 
 Route::get('/login/{url?}',"user\GeneralUser@showLogin");
 Route::post('/login/match',"user\GeneralUser@matchLogin");
